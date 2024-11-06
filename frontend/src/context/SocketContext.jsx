@@ -14,9 +14,14 @@ export const SocketContextProvider = ({ children }) => {
   const [socket, setSocket] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
   const { authUser } = useAuthContext();
+  const url =
+    // eslint-disable-next-line no-undef
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:4000"
+      : "https://chat-app-ftw7.onrender.com";
   useEffect(() => {
     if (authUser) {
-      const socket = io("http://localhost:4000", {
+      const socket = io(url, {
         query: {
           userId: authUser._id,
         },
