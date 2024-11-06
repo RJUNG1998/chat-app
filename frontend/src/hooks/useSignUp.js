@@ -37,6 +37,7 @@ const useSignUp = () => {
       if (res.status >= 400 && res.status < 600) {
         throw new Error(data.error);
       }
+
       localStorage.setItem("user", JSON.stringify(data));
       setAuthUser(data);
     } catch (error) {
