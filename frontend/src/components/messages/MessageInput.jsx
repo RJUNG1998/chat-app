@@ -16,7 +16,7 @@ const MessageInput = () => {
       <div className="w-full flex">
         <input
           type="text"
-          className="border text-sm rounded-lg w-full p-2.5  bg-gray-700 border-gray-600 text-white"
+          className="border text-sm rounded-lg w-full p-2.5  bg-gray-700 border-gray-600 text-baby-pink"
           placeholder="Send a message"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
